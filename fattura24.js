@@ -53,28 +53,7 @@ const example2 = {
   CustomerCellPhone: '335123456789',
   CustomerEmail: 'info@rossi.it'
 };
-
-
-// try {
-  //   let response = convert.xml2js(example, { compact: true, spaces: 4, trim: true, ignoreComment: true, nativeType: true, textKey: 'text' });
-  //   let result = {};
-  //   for (const key in response.root) {
-    //       result[key] = response.root[key].text;
-    //   }
-    //   console.log(result);
-    // } catch (error) {
-      //   console.log(error);
-      // }
       
-// try {
-//   let body = Object.assign({}, xmlWrapObj);
-//   body.Fattura24.Document = example2;
-//   let response = convert.js2xml(body, { spaces: 4, compact: true });
-//   console.log(response);
-// } catch (error) {
-//   console.log(error);
-// }
-
 /**
  * Fattura24
  * 
@@ -120,7 +99,7 @@ Fattura24.prototype.defaultObject = {
  */
 Fattura24.prototype.prepareXml = function prepareXml(data) {
   try {
-    let body = Object.assign({}, xmlWrapObj);
+    let body = Object.assign({}, data);
     body.Fattura24.Document = example2;
     let response = convert.js2xml(body, { spaces: 0, compact: true });
   } catch (error) {
@@ -128,6 +107,26 @@ Fattura24.prototype.prepareXml = function prepareXml(data) {
   }
 
   return response;
+};
+
+/**
+ * prepareResponse
+ * 
+ * Prepare the response object from xml
+ * @param {object} data 
+ */
+Fattura24.prototype.prepareResponse = function prepareResponse(data) {
+  try {
+    let result = {};
+    let response = convert.xml2js(data, { compact: true, ignoreComment: true, nativeType: true, textKey: 'text' });
+    for (const key in response.root) {
+      result[key] = response.root[key].text;
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+
+  return result;
 };
 
 const fattura24 = new Fattura24({ apiKey: 'C0EmQBIsThBF7q0wb5LImsvX1NdS9hee' });
