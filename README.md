@@ -45,7 +45,7 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
-#### v0.0.1 - 26/03/2018
+#### v0.0.2 - 22/03/2018
 Initial release.
 
 ## Author

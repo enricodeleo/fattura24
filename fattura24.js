@@ -25,7 +25,7 @@
  */
 'use strict';
 
-const MODULE_VERSION = '0.0.1';
+const MODULE_VERSION = '0.0.2';
 const API_VERSION = '0.3';
 const F24_HOST = 'www.app.fattura24.com';
 

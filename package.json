@@ -1,13 +1,9 @@
 {
   "name": "fattura24",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fattura24 nodejs SDK",
   "main": "fattura24.js",
   "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://enricodeleo@bitbucket.org/tractionmanagement/fattura24.git"
-  },
   "keywords": [
     "sdk",
     "api",
@@ -21,7 +17,7 @@
     "url": "http://enricodeleo.com"
   },
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/tractionmanagement/fattura24#readme",
+  "homepage": "https://fattura24.com",
   "devDependencies": {
     "eslint": "^4.19.1"
   },
