@@ -1,6 +1,6 @@
 {
   "name": "fattura24",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Fattura24 nodejs SDK",
   "main": "./lib/fattura24.js",
   "scripts": {
