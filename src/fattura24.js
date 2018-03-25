@@ -71,13 +71,13 @@ function Fattura24(options) {
      * @param prop the property called on the Proxy
      */
     get: function get(target, prop) {
-      // This will return the property on the "parent" object
-      if (prop in target) return target[prop];
-
-      if (!routes[prop]) throw new Error(`The method ${prop} doesn't exists`);
-
       // No defined property, go on with magic method
-      return (...args) => target.makeCall(prop, ...args);
+      if (prop in routes) {
+        return (...args) => target.makeCall(prop, ...args);
+      }
+
+      // This will return the property on the "parent" object
+      return target[prop];
     },
   };
 
