@@ -1,10 +1,8 @@
 /**
  * Routes
- * Returns an object containing all the default routes to Fattura24's api.
- * 
- * @param {string} version API version code 
+ * An object containing all the default routes to Fattura24's api.
  */
-module.exports = {
+const routes = {
   testKey: 'TestKey',
   saveCustomer: 'SaveCustomer',
   saveDocument: 'SaveDocument',
@@ -13,5 +11,7 @@ module.exports = {
   getPdc: 'GetPdc',
   getNumerator: 'GetNumerator',
   getProduct: 'GetProduct',
-  saveItem: 'SaveItem'
+  saveItem: 'SaveItem',
 };
+
+export { routes };

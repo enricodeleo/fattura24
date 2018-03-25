@@ -1,9 +1,19 @@
 {
   "name": "fattura24",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Fattura24 nodejs SDK",
-  "main": "fattura24.js",
-  "scripts": {},
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "cover": "cross-env BABEL_ENV=commonjs istanbul cover _mocha -- --require babel-core/register --recursive",
+    "lint": "eslint src",
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run lint npm run build"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
   "keywords": [
     "sdk",
     "api",
@@ -19,7 +29,14 @@
   "license": "UNLICENSED",
   "homepage": "https://fattura24.com",
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
     "xml-js": "^1.6.2"

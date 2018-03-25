@@ -2,9 +2,6 @@
 
 💻 Interact programmatically with 📃[Fattura24](https://www.fattura24.com) APIs with node.js.
 
-## Requisites
-* node.js >= 8
-
 ## Usage
 This module exposes an object you can interact to.
 
@@ -45,6 +42,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.0.5 - 25/03/2018
+Transpile es6 to es5 for wider nodejs compatibility (babel targeted to 4.0.0). 
+
 #### v0.0.2 - 22/03/2018
 Initial release.
 
