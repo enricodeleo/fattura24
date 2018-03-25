@@ -42,6 +42,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.0.6 - 25/03/2018
+Fixed an issue with npm publication. 
+
 #### v0.0.5 - 25/03/2018
 Transpile es6 to es5 for wider nodejs compatibility (babel targeted to 4.0.0). 
 
