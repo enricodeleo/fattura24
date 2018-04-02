@@ -3,7 +3,7 @@
 💻 Interact programmatically with 📃[Fattura24](https://www.fattura24.com) APIs with node.js.
 
 ## Usage
-This module exposes an object you can interact to.
+This module exposes an object you can interact to with all the supported methods of Fattura24's api.
 
 ```js
 var fattura24 = new Fattura24({ apiKey: 'weejeighaGushuz7Megeisheij6oogh3' });
