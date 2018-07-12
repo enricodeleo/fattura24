@@ -2,6 +2,9 @@
 
 💻 Interact programmatically with 📃[Fattura24](https://www.fattura24.com) APIs with node.js.
 
+## Offically recognized by Fattura24
+[Original post](https://www.fattura24.com/node-js-modulo-fatturazione/)
+
 ## Usage
 This module exposes an object you can interact to with all the supported methods of Fattura24's api.
 
