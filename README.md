@@ -29,6 +29,60 @@ fattura24.saveCustomer({
 });
 ```
 
+## Note about new e-invoice (Fattura Elettronica)
+
+When creating a fattura elettronica, please keep in mind to wrap following elements' strings between `<![CDATA[` and `]]`.
+
+* CustomerName
+* CustomerAddress
+* Object
+* Rows[].Row.Description
+
+Example
+
+```js
+fattura24.saveDocument({
+  TotalWithoutTax: 29.10,
+  VatAmount: 0,
+  DocumentType: 'FE',
+  SendEmail: false,
+  FeVatNature: 'N4',
+  Object: '<![CDATA[Handmade products export]]',
+  Total: 29.10,
+  Payments: {
+    Payment: {
+      Date: '2018-12-14',
+      Paid: true,
+      Amount: 29.10
+    }
+  },
+  CustomerName: '<![CDATA[Enrico Deleo]]',
+  CustomerAddress: '<![CDATA[Via delle vie più belle, 1]]',
+  CustomerPostcode: '00100',
+  CustomerCity: 'Roma',
+  CustomerCountry: 'Italy',
+  CustomerFiscalCode: 'AAADDD00S00D00D',
+  CustomerVatCode: '1234567890',
+  CustomerCellPhone: '3331234567',
+  CustomerEmail: 'mail@example.com',
+  FootNotes: 'Grazie per aver acquistato da noi',
+  Rows: [
+    {
+      Row: {
+        Code: '001',
+        Description: '<![CDATA[Wooden Chair]]',
+        Price: 18.04,
+        VatCode: 0,
+        VatDescription: '0%',
+        Qty: 1
+      },
+    },
+  ],
+})
+.then(console.log)
+.catch(console.log);
+```
+
 ## Methods
 This module reflects **API version v0.3.3** methods. Further details are available on [official documentation](https://www.fattura24.com/api-documentazione/).
 
@@ -45,8 +99,11 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.1.1 - 14/12/2018
+Update README.
+
 #### v0.1.0 - 14/12/2018
-* Update dependencies with security fixes.
+Update dependencies with security fixes.
 
 #### v0.0.7 - 25/03/2018
 Do not throw error when unknown method is invoked.
