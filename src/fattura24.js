@@ -29,7 +29,7 @@ import https from 'https';
 import querystring from 'querystring';
 import { routes } from './constants/routes';
 
-const MODULE_VERSION = '0.1.1';
+const MODULE_VERSION = '0.1.2';
 const API_VERSION = '0.3';
 const F24_HOST = 'www.app.fattura24.com';
 

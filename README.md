@@ -8,6 +8,8 @@
 ## Usage
 This module exposes an object you can interact to with all the supported methods of Fattura24's api.
 
+### Create a new customer
+
 ```js
 var fattura24 = new Fattura24({ apiKey: 'weejeighaGushuz7Megeisheij6oogh3' });
 
@@ -29,25 +31,18 @@ fattura24.saveCustomer({
 });
 ```
 
-## Note about new e-invoice (Fattura Elettronica)
-
-When creating a fattura elettronica, please keep in mind to wrap following elements' strings between `<![CDATA[` and `]]`.
-
-* CustomerName
-* CustomerAddress
-* Object
-* Rows[].Row.Description
-
-Example
+### Create a new invoice
 
 ```js
+var fattura24 = new Fattura24({ apiKey: 'weejeighaGushuz7Megeisheij6oogh3' });
+
 fattura24.saveDocument({
   TotalWithoutTax: 29.10,
   VatAmount: 0,
   DocumentType: 'FE',
   SendEmail: false,
   FeVatNature: 'N4',
-  Object: '<![CDATA[Handmade products export]]',
+  Object: 'Handmade products export',
   Total: 29.10,
   Payments: {
     Payment: {
@@ -56,22 +51,20 @@ fattura24.saveDocument({
       Amount: 29.10
     }
   },
-  CustomerName: '<![CDATA[Enrico Deleo]]',
-  CustomerAddress: '<![CDATA[Via delle vie più belle, 1]]',
-  CustomerPostcode: '00100',
-  CustomerCity: 'Roma',
-  CustomerCountry: 'Italy',
-  CustomerFiscalCode: 'AAADDD00S00D00D',
-  CustomerVatCode: '1234567890',
-  CustomerCellPhone: '3331234567',
+  CustomerName: 'John Doe',
+  CustomerAddress: '29, 5th Avenue',
+  CustomerPostcode: 'AA12345',
+  CustomerCity: 'NYC',
+  CustomerCountry: 'USA',
+  CustomerCellPhone: '+15551234567',
   CustomerEmail: 'mail@example.com',
   FootNotes: 'Grazie per aver acquistato da noi',
   Rows: [
     {
       Row: {
         Code: '001',
-        Description: '<![CDATA[Wooden Chair]]',
-        Price: 18.04,
+        Description: 'Wooden Chair',
+        Price: 29.10,
         VatCode: 0,
         VatDescription: '0%',
         Qty: 1
@@ -99,7 +92,7 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
-#### v0.1.1 - 14/12/2018
+#### v0.1.2 - 14/12/2018
 Update README.
 
 #### v0.1.0 - 14/12/2018
