@@ -45,6 +45,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.1.0 - 14/12/2018
+* Update dependencies with security fixes.
+
 #### v0.0.7 - 25/03/2018
 Do not throw error when unknown method is invoked.
 
@@ -52,7 +55,7 @@ Do not throw error when unknown method is invoked.
 Fixed an issue with npm publication.
 
 #### v0.0.5 - 25/03/2018
-Transpile es6 to es5 for wider nodejs compatibility (babel targeted to 4.0.0). 
+Transpile es6 to es5 for wider nodejs compatibility (babel targeted to 4.0.0).
 
 #### v0.0.2 - 22/03/2018
 Initial release.
