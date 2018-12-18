@@ -5,6 +5,10 @@
 ## Offically recognized by Fattura24
 [Original post](https://www.fattura24.com/node-js-modulo-fatturazione/)
 
+## You don't have a Fattura24 account, yet?
+
+[![Fattura24](http://www.fattura24.com/banner/fattura24_640x200.jpg)](http://www.fattura24.com/?src=ab80977)
+
 ## Usage
 This module exposes an object you can interact to with all the supported methods of Fattura24's api.
 
