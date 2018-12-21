@@ -96,6 +96,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.1.3 - 21/12/2018
+[New License](https://creativecommons.org/licenses/by-nc/4.0/) added.
+
 #### v0.1.2 - 14/12/2018
 Update README.
 
