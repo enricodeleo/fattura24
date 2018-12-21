@@ -19,9 +19,6 @@
  *  }).catch(function( error ) {
  *    console.error( error );
  *  });
- *
- * @license MIT
- })
  */
 
 import convert from 'xml-js';
