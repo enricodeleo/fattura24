@@ -35,6 +35,37 @@ fattura24.saveCustomer({
 });
 ```
 
+
+#### Create a new customer with special chars
+
+In case of special chars, like the ampersand (&) Fattura24 requires to escape them in an XML cdata.
+One way to do it is to pass a subobject with the _cdata field to the properties.
+
+Right now the project automatically converts the _cdata returning from the xml, but doesn't autoconvert properties while
+sending them, therefore it's advised to add the _cdata in all needed fields.
+
+Example:      
+```js
+var fattura24 = new Fattura24({ apiKey: 'weejeighaGushuz7Megeisheij6oogh3' });
+
+fattura24.saveCustomer({
+    CustomerName: { _cdata: 'MARIO ROSSI & Figli' },
+    CustomerAddress: { _cdata: 'Via Alberti 8' },
+    CustomerPostcode: '06122',
+    CustomerCity: 'Perugia',
+    CustomerProvince: 'PG',
+    CustomerCountry: '',
+    CustomerFiscalCode: 'MARROS66C44G217W',
+    CustomerVatCode: '03912377542',
+    CustomerCellPhone: '335123456789',
+    CustomerEmail: 'info@rossi.it'
+}).then(function( customer ) {
+    console.log( customer );
+}).catch(function( error ) {
+    console.error( error );
+});
+```
+
 ### Create a new invoice
 
 ```js
