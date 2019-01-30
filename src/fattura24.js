@@ -135,8 +135,10 @@ Fattura24.prototype.flatObject = function flatObject(object) {
   const flatten = {};
 
   Object.keys(object).forEach((key) => {
-    if (!object[key].text) {
+    if (!object[key].text && !object[key]._cdata) {
       flatten[key] = this.flatObject(object[key]);
+    } else if (object[key]._cdata) {
+      flatten[key] = object[key]._cdata;
     } else {
       flatten[key] = object[key].text;
     }
