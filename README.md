@@ -127,6 +127,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.2.1 - 31/01/2019
+Fix for non-xml parameters such as in /getFile and /GetProduct
+
 #### v0.2.0 - 30/01/2019
 Support for <![CDATA[ fields
 

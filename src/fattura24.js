@@ -26,7 +26,7 @@ import https from 'https';
 import querystring from 'querystring';
 import { routes } from './constants/routes';
 
-const MODULE_VERSION = '0.2.0';
+const MODULE_VERSION = '0.2.1';
 const API_VERSION = '0.3';
 const F24_HOST = 'www.app.fattura24.com';
 
@@ -135,10 +135,10 @@ Fattura24.prototype.flatObject = function flatObject(object) {
   const flatten = {};
 
   Object.keys(object).forEach((key) => {
-    if (!object[key].text && !object[key]._cdata) {
+    if (!object[key].text && !object[key]._cdata) { // eslint-disable-line no-underscore-dangle
       flatten[key] = this.flatObject(object[key]);
-    } else if (object[key]._cdata) {
-      flatten[key] = object[key]._cdata;
+    } else if (object[key]._cdata) { // eslint-disable-line no-underscore-dangle
+      flatten[key] = object[key]._cdata; // eslint-disable-line no-underscore-dangle
     } else {
       flatten[key] = object[key].text;
     }
