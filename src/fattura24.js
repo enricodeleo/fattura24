@@ -154,12 +154,18 @@ Fattura24.prototype.flatObject = function flatObject(object) {
  * @param {string} endpoint
  * @param {object} body
  */
-Fattura24.prototype.makeCall = function makeCall(endpoint, body) {
+Fattura24.prototype.makeCall = function makeCall(endpoint, body, category) {
   const self = this;
   const postData = querystring.stringify({
     apiKey: self.apiKey,
-    xml: self.prepareXml(body),
   });
+
+  if (typeof body === 'object') postData.xml = self.prepareXml(body);
+  if (typeof body === 'string' && !category) postData.docId = body;
+  if (typeof body === 'string' && category) {
+    postData.code = body;
+    postData.category = category;
+  }
 
   const postOptions = {
     host: F24_HOST,
