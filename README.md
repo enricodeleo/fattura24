@@ -44,7 +44,7 @@ One way to do it is to pass a subobject with the _cdata field to the properties.
 Right now the project automatically converts the _cdata returning from the xml, but doesn't autoconvert properties while
 sending them, therefore it's advised to add the _cdata in all needed fields.
 
-Example:      
+Example:
 ```js
 var fattura24 = new Fattura24({ apiKey: 'weejeighaGushuz7Megeisheij6oogh3' });
 
@@ -127,6 +127,9 @@ This module reflects **API version v0.3.3** methods. Further details are availab
 |saveItem   |Create a credit   |
 
 ## CHANGELOG
+#### v0.2.0 - 30/01/2019
+Support for <![CDATA[ fields
+
 #### v0.1.3 - 21/12/2018
 [New License](https://creativecommons.org/licenses/by-nc/4.0/) added.
 
@@ -149,4 +152,7 @@ Transpile es6 to es5 for wider nodejs compatibility (babel targeted to 4.0.0).
 Initial release.
 
 ## Author
-[Enrico Deleo](https://enricodeleo.com)
+[Enrico Deleo](https://enricodeleo.com/)
+
+## Contributors
+[Andrea Grassi](http://andreagrassi.me/)
