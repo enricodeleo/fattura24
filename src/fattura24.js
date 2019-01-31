@@ -26,7 +26,7 @@ import https from 'https';
 import querystring from 'querystring';
 import { routes } from './constants/routes';
 
-const MODULE_VERSION = '0.2.1';
+const MODULE_VERSION = '0.2.2';
 const API_VERSION = '0.3';
 const F24_HOST = 'www.app.fattura24.com';
 
@@ -156,16 +156,18 @@ Fattura24.prototype.flatObject = function flatObject(object) {
  */
 Fattura24.prototype.makeCall = function makeCall(endpoint, body, category) {
   const self = this;
-  const postData = querystring.stringify({
+  const payload = {
     apiKey: self.apiKey,
-  });
+  };
 
-  if (typeof body === 'object') postData.xml = self.prepareXml(body);
-  if (typeof body === 'string' && !category) postData.docId = body;
+  if (typeof body === 'object') payload.xml = self.prepareXml(body);
+  if (typeof body === 'string' && !category) payload.docId = body;
   if (typeof body === 'string' && category) {
-    postData.code = body;
-    postData.category = category;
+    payload.code = body;
+    payload.category = category;
   }
+
+  const postData = querystring.stringify(payload);
 
   const postOptions = {
     host: F24_HOST,
